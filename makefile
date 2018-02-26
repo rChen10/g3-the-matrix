@@ -1,10 +1,6 @@
-all: line matrix matrix_test
-	g++ *.o
-	./a.out
-	rm *.o
-
-matrix_test: ./src/matrix_test
-	g++ ./src/matrix_text.cpp -c
+all: ./src/matrixTest
+	./src/matrixTest
+	rm ./src/matrixTest
 
 pixel: ./src/pixel.cpp
 	g++ ./src/pixel.cpp -c

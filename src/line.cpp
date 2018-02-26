@@ -27,6 +27,22 @@ class line{
 		color = pixel(0, 0, 0);
 	}
 
+	line(point pi, point pf){
+		if(pf[0] - pi[0] < 0){
+			p0 = pf;
+			p1 = pi;
+		}
+		else if(pf[1] - pi[1] < 0){
+			p0 = pf;
+			p1 = pi;
+		}
+		else{
+			p0 = pi;
+			p1 = pf;
+		}
+		color = pixel(0, 0, 0);
+	}
+
 	void set_color(pixel p){
 		color = p;
 	}

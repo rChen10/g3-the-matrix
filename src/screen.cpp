@@ -11,25 +11,31 @@ class point : public std::vector<int>{
 		//v = std::vector<int>(4, 0);
 	}
 
-	point(int x){
-		//v = std::vector<int>(4, 0);
-		this[0] = x;
-		this[3] = 1;
+	point(int x) : std::vector<int>(4, 0){
+		(*this)[0] = x;
+		(*this)[3] = 1;
 	}
 
-	point(int x, int y){
+	point(int x, int y) : std::vector<int>(4, 0){
 		//v = std::vector<int>(4, 0);
-		this[0] = x;
-		this[1] = y;
-		this[3] = 1;
+		(*this)[0] = x;
+		(*this)[1] = y;
+		(*this)[3] = 1;
 	}
 
-	point(int x, int y, int z){
+	point(int x, int y, int z) : std::vector<int>(4, 0){
 		//v = std::vector<int>(4, 0);
-		this[0] = x;
-		this[1] = y;
-		this[2] = z;
-		this[3] = 1;
+		(*this)[0] = x;
+		(*this)[1] = y;
+		(*this)[2] = z;
+		(*this)[3] = 1;
+	}
+
+	point(std::vector<int> v) : std::vector<int>(4, 0){
+		(*this)[0] = v[0];
+		(*this)[1] = v[1];
+		(*this)[2] = v[2];
+		(*this)[3] = 1;
 	}
 
 	//int operator[](int i){
@@ -68,9 +74,9 @@ class screen{
 
 		}
 
-		void render(){
+		void render(std::string name){
 			std::ofstream f;
-			f.open("output.ppm");
+			f.open(name);
 			f << "P3\n";
 			f << w << " " << h << "\n";
 			f << "255\n";
@@ -81,7 +87,7 @@ class screen{
 					if (j != (w-1))
 						f << " ";
 				}
-				if (i != (h-1))
+				//if (i != (h-1))
 					f << "\n";
 			}
 
