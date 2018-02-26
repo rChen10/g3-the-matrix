@@ -9,7 +9,7 @@ class matrix{
 	public:
 	
 	matrix(){
-		m = std::vector<std::vector<int>>();
+		m = std::vector< std::vector<int> >();
 		s = 0;
 	}
 
@@ -62,10 +62,10 @@ class matrix{
 		//line *l;
 		//point *p0, *p1;
 		for(int i = 0; i < s; i+=2){
-			auto p0 = point(m[i]);
-			auto p1 = point(m[i+1]);
+			point p0 = point(m[i]);
+			point p1 = point(m[i+1]);
 			//std::cout << (*p1)[0] << " " << (*p1)[1] << "\n";
-			auto l = line(p0, p1);
+			line l = line(p0, p1);
 			l.draw(scrn);
 
 			//std::cout << (*l).p0[0] << " " << (*l).p0[1] << " " << (*l).p1[0] << (*l).p1[1] << "\n";

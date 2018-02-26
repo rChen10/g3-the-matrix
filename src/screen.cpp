@@ -74,7 +74,7 @@ class screen{
 
 		}
 
-		void render(std::string name){
+		void render(char name[]){
 			std::ofstream f;
 			f.open(name);
 			f << "P3\n";
